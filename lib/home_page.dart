@@ -1,32 +1,7 @@
+import 'package:cubit_example/home_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
-import 'dart:math' as math show Random;
 
-// We need to pick random names
-const names = [
-  'BLoC',
-  'Cubit',
-  'GetX',
-  'Provider',
-  'Scoped Model',
-  'MobX',
-  'Stacked',
-];
-
-// We need to pick random names
-extension RandomElement<T> on Iterable<T> {
-  T getRandomElement() => elementAt(math.Random().nextInt(length));
-}
-
-// Cubit class definition
-class NameCubit extends Cubit<String?> {
-  // Constructor of the cubit
-  NameCubit() : super(null);
-
-  // Allow picking random names in the cubit
-  void pickRandomName() => emit(names.getRandomElement());
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
